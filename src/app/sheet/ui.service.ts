@@ -15,16 +15,16 @@ export class UIService {
   private _sheetView;
 
 
-  showSheet(forCard?: boolean): void {
-    this.getView(SheetComponent).then((v) => {
+  showSheet(name: string): void {
+    this.getView(SheetComponent, name).then((v) => {
       this._sheetView = v;
       getRootLayout()
         .open(this._sheetView, {
-          shadeCover: forCard
+          shadeCover: false
             ? null
             : {
               color: '#FFF',
-              opacity: forCard ? 0 : 0.7,
+              opacity: false ? 0 : 0.7,
               tapToClose: true,
             },
           animation: {
@@ -41,7 +41,7 @@ export class UIService {
           },
         })
         .then(() => {
-          console.log('opened');
+        //   console.log('sheet is open');
         })
         .catch((err) => {
           console.log('error opening', err);

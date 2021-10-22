@@ -11,16 +11,16 @@ import { UIService } from '../sheet/ui.service';
 })
 export class HomeComponent {
   // want to send name to bottom sheet as a demo
-  
-  name = "Brian";
+
+  name: string;
 
   constructor(private uiService: UIService) {
-
+    this.name = "Brian"
   }
 
   openSheet(args: EventData) {
     console.log("Open Sheet");
-
-    this.uiService.showSheet();
+    console.log("name: ", this.name); // brian
+    this.uiService.showSheet(this.name);
   }
 }
