@@ -4,9 +4,10 @@ import { NativeScriptModule } from '@nativescript/angular'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 
+import { SheetModule } from './sheet/sheet.module';
 @NgModule({
   bootstrap: [AppComponent],
-  imports: [NativeScriptModule, AppRoutingModule],
+  imports: [NativeScriptModule, AppRoutingModule, SheetModule],
   declarations: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA],
 })

@@ -2,12 +2,6 @@
   <Label text="Home"></Label>
 </ActionBar>
 
-<GridLayout>
-  <ListView [items]="items">
-    <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['../item', item.id]">
-        <Label [text]="item.name"></Label>
-      </StackLayout>
-    </ng-template>
-  </ListView>
-</GridLayout>
+<StackLayout verticalAlignment="center">
+  <Button text="Open Sheet" (tap)="openSheet($event)" horizontalAlignment="center" class="btn"></Button>
+</StackLayout>

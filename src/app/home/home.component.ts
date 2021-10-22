@@ -1,17 +1,23 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Inject } from '@angular/core'
+import { EventData } from '@nativescript/core';
+import { RootLayoutInputs } from '../sheet/tokens';
+import { UIService } from '../sheet/ui.service';
 
-import { DataService, DataItem } from '../shared/data.service'
 
 @Component({
   selector: 'Home',
   templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
-  items: Array<DataItem>
+export class HomeComponent {
+  @Inject(RootLayoutInputs) rootLayoutInputs: any;
+  name = "Brian";
 
-  constructor(private _itemService: DataService) {}
+  constructor(private uiService: UIService) {
+  }
 
-  ngOnInit(): void {
-    this.items = this._itemService.getItems()
+  openSheet(args: EventData) {
+    console.log("Open Sheet");
+    this.uiService.showSheet();
   }
 }
