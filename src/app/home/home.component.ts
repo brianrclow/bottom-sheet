@@ -10,14 +10,17 @@ import { UIService } from '../sheet/ui.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  @Inject(RootLayoutInputs) rootLayoutInputs: any;
+  // want to send name to bottom sheet as a demo
+  
   name = "Brian";
 
   constructor(private uiService: UIService) {
+
   }
 
   openSheet(args: EventData) {
     console.log("Open Sheet");
+
     this.uiService.showSheet();
   }
 }
