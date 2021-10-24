@@ -10,17 +10,12 @@ import { UIService } from './ui.service';
 })
 export class SheetComponent {
 
-  @Input() name: string;
-
-  constructor(private uiService: UIService, @Inject(RootLayoutInputs) @Optional() private input: any) {
+  constructor(private uiService: UIService, @Inject(RootLayoutInputs) @Optional() public person: any) {
   }
 
   ngOnInit() {
-    if (this.input?.name) {
-      this.name = this.input.name;
-    }
     console.log('sheet is open');
-    console.log("name: ", this.name); // undefined?
+    console.log("name: ", this.person.name); // "Brain"
   }
 
   close(): void {

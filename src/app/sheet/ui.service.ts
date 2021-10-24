@@ -15,8 +15,8 @@ export class UIService {
   private _sheetView;
 
 
-  showSheet(name: string): void {
-    this.getView(SheetComponent, name).then((v) => {
+  showSheet(input?: any): void {
+    this.getView(SheetComponent, input).then((v) => {
       this._sheetView = v;
       getRootLayout()
         .open(this._sheetView, {
